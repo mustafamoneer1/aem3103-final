@@ -20,3 +20,4 @@ function [V, Gam, H, R] = setup_sim()
     
     H		=	2;			% Initial Height, m
 	R		=	0;			% Initial Range, m
+
