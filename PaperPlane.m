@@ -107,7 +107,7 @@ ylabel('Height');
 title('100 Simulated Trajectories in 2D');
 grid on;
 % Polyfit Data
-degree = 2;
+degree = 3;
 poly_range = polyfit(traj_time(:), traj_range(:), degree);
 poly_height = polyfit(traj_time(:), traj_height(:), degree);
 % Evaluate the polynomial curves
@@ -141,12 +141,52 @@ ylabel('m/s');
 title('Range Over Time Derivative');
 grid on;
 
+% simulate trajectories 
+xo = [V;Gam;H;R];
+x = ode23('EqMotion',tspan,xo);
+xf = [7.5;0.4;H;R];
+y = ode23('EqMotion',tspan,xo);
+fname = 'animated_plot.gif';
+frame_rate = 10;
+%plot_gif(x,y,z, fname, frame_rate);
 
+figure;
+xo = [V;Gam;H;R];
+
+[t6, x6] = ode23(@(t,x) EqMotion(t,x), tspan, xo);
+
+xf = [7.5;0.4;H;R];
+[t7, x7] = ode23('EqMotion',tspan,xo);
+
+Gif(length(tspan)) = struct('cdata', [], 'colormap', []);
+for k=1:length(tspan)
+
+    clf 
+    
+    plot(x6(k, 4), x6(k, 3),x7(k, 4), x7(k, 3), 'go', 'LineWidth', 3, 'MarkerSize', 20);
+
+    hold on;
+
+	plot(x6(:,4),x6(:,3),x7(:,4),x7(:,3), '-k', 'LineWidth', 2)
+
+    xlabel('Range');
+    ylabel('Height');
+    title('2D Trajectory Animation');
+    grid on;
+
+    
+    Gif(k) = getframe;  
+end
 filename = 'trajectory_animation.gif';
-frame_rate = 10;  % Number of frames per second
-gif(filename, frame_rate);
+frame_rate = 10;
+write_gif(filename, Gif, frame_rate);
 
-
-
-
+function write_gif(filename, Gif, frame_rate)
+    % Write the GIF file
+    gif_writer = VideoWriter(filename, 'Uncompressed AVI');
+    gif_writer.FrameRate = frame_rate;
+    open(gif_writer);
+    writeVideo(gif_writer, Gif);
+    close(gif_writer);
+end
 
