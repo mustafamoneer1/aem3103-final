@@ -107,7 +107,7 @@ ylabel('Height');
 title('100 Simulated Trajectories in 2D');
 grid on;
 % Polyfit Data
-degree = 2;
+degree = 3;
 poly_range = polyfit(traj_time(:), traj_range(:), degree);
 poly_height = polyfit(traj_time(:), traj_height(:), degree);
 % Evaluate the polynomial curves
@@ -141,12 +141,41 @@ ylabel('m/s');
 title('Range Over Time Derivative');
 grid on;
 
+% simulate trajectories 
+xo = [V;Gam;H;R];
+x = ode23('EqMotion',tspan,xo);
+xf = [7.5;0.4;H;R];
+y = ode23('EqMotion',tspan,xo);
+fname = 'animated_plot.gif';
+frame_rate = 10;
+%plot_gif(x,y,z, fname, frame_rate);
 
-filename = 'trajectory_animation.gif';
-frame_rate = 10;  % Number of frames per second
-gif(filename, frame_rate);
+figure 
+xo = [V;Gam;H;R];
 
+[t6, x6] = ode23(@(t6,x6) EqMotion(t6,x6), tspan, xo);
 
+for k=1:length(tspan)
 
+    clf 
+
+    t_k = t6(k);
+    x_k = x6(k);
+
+    
+
+    plot(t_k, x_k, 'go', 'LineWidth', 2)    
+    
+    hold on 
+
+	plot(t6,x6,'-k')
+
+    grid on
+    Title('Trajectory Animation')
+    view([30 35])
+    
+    drawnow 
+    pause(0.1)
+end
 
 
