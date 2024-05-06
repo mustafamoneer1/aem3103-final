@@ -55,6 +55,7 @@ Figure1.fig;
 Figure2.fig;
 ![100 Runs](https://github.com/mustafamoneer1/aem3103-final/assets/167791403/eeab6668-c890-4fc0-9782-a5d9a4cafca3)
 %
+% 3 & 4)
 Figure3.fig;
 ![Average](https://github.com/mustafamoneer1/aem3103-final/assets/167791403/14ad640e-2d97-4764-a05c-45ade544f16f)
 Figure4.fig;
