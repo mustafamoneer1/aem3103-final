@@ -33,7 +33,7 @@
 % B)Average Trajectories: https://github.com/mustafamoneer1/aem3103-final/blob/main/AverageTrajectory.m
 % 
 %     This code plots 100 simulated trajectories of a paper airplane using random 
-%     parameters. 
+%     parameters.
 % 
 % C&D)Derivatives: https://github.com/mustafamoneer1/aem3103-final/blob/main/Derivatives.m
 % 
@@ -50,5 +50,16 @@
 % 1)
 Figure1.fig;
 ![Variated Parameters](https://github.com/mustafamoneer1/aem3103-final/assets/167791403/32f31077-5e54-49e1-bc0d-ecaf58c5443e)
+%
+% 2)
+Figure2.fig;
+![100 Runs](https://github.com/mustafamoneer1/aem3103-final/assets/167791403/eeab6668-c890-4fc0-9782-a5d9a4cafca3)
+%
+Figure3.fig;
+![Average](https://github.com/mustafamoneer1/aem3103-final/assets/167791403/14ad640e-2d97-4764-a05c-45ade544f16f)
+Figure4.fig;
+![Derivative](https://github.com/mustafamoneer1/aem3103-final/assets/167791403/e6c09c11-1d94-46f8-8a91-b2de5723a4a4)
+%
+Figure5.fig;
 
 
