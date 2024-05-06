@@ -62,5 +62,5 @@ Figure4.fig;
 ![Derivative](https://github.com/mustafamoneer1/aem3103-final/assets/167791403/e6c09c11-1d94-46f8-8a91-b2de5723a4a4)
 %
 Figure5.fig;
-
-
+![2D_Trajection_Animation_1](https://github.com/mustafamoneer1/aem3103-final/assets/167791403/b57d79c7-f23e-47fd-8f09-5de1b2c05c58)
+![2D_Trajection_Animation_2](https://github.com/mustafamoneer1/aem3103-final/assets/167791403/d51b114a-fb46-4491-95de-97ddf37639cb)
