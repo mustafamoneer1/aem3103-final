@@ -49,5 +49,6 @@
 % 
 % 1)
 Figure1.fig;
+![Variated Parameters](https://github.com/mustafamoneer1/aem3103-final/assets/167791403/32f31077-5e54-49e1-bc0d-ecaf58c5443e)
 
 
